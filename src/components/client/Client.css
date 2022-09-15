@@ -1,0 +1,18 @@
+.customers {
+    display: flex;
+    flex-direction: column;
+}
+
+.customer {
+    background-color: rgb(211, 191, 230);
+    border: 1px solid darkmagenta;
+    padding: 0.7rem;
+    margin: 0.5rem 0;
+    border-radius: 2px;
+}
+
+.customer__header {
+    font-size: larger;
+    font-weight: 700;
+    line-height: 3rem;
+}
