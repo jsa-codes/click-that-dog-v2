@@ -1,4 +1,7 @@
 import { Outlet, Route, Routes } from 'react-router-dom';
+import { ClientContainer } from '../client/ClientContainer';
+import { ClientDetails } from '../client/ClientDetails';
+import { ClientList } from '../client/ClientList';
 import { TrainerProfileForm } from '../profileForms/TrainerProfileForm';
 
 
@@ -18,6 +21,16 @@ export const TrainerViews = () => {
           <Outlet />
         </>
       }>
+
+        <Route path="clients" element={ <ClientContainer />}/>
+        <Route path="clients" element={ <ClientList />}/>
+        <Route path="clients" element={ <ClientDetails />}/>
+
+
+
+
+
+
 
       </Route>
 

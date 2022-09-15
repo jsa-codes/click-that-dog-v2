@@ -11,6 +11,9 @@ export const ClientNav = () => {
             <li className="navbar__item active">
                 <Link className="navbar__link" to="/clientProfile">Profile</Link>
             </li>
+            <li className="navbar__item active">
+                <Link className="navbar__link" to="/trainingLog">Training Log</Link>
+            </li>
             
             {
                 localStorage.getItem("click_that_dog_user")
