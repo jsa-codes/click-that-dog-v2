@@ -11,13 +11,13 @@ export const ClientNav = () => {
             
             <img src='http://www.erblicken.com/wp-content/uploads/2016/06/Funny_Jack2.jpg' alt=''/>
             <li className="navbar__item active">
-                <Link className="navbar__link" to="/training-log">Training</Link>
+                <Link className="navbar__link" to="/trainingSession">Training</Link>
             </li>
             <li className="navbar__item active">
-                <Link className="navbar__link" to="/training-log">Trainers</Link>
+                <Link className="navbar__link" to="/trainers">Trainers</Link>
             </li>
             <li className="navbar__item active">
-                <Link className="navbar__link" to="/client-profile">Profile</Link>
+                <Link className="navbar__link" to="/profileForm">Profile</Link>
             </li>
             
             {

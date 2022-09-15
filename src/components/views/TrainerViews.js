@@ -2,7 +2,7 @@ import { Outlet, Route, Routes } from 'react-router-dom';
 import { ClientContainer } from '../client/ClientContainer';
 import { ClientDetails } from '../client/ClientDetails';
 import { ClientList } from '../client/ClientList';
-import { TrainerProfileForm } from '../profileForms/TrainerProfileForm';
+import { TrainerProfileForm } from '../profileForm/TrainerProfileForm';
 
 
 
