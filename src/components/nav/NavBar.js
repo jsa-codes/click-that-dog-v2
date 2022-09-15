@@ -8,8 +8,9 @@ export const NavBar = () => {
    
     const localClickThatDogUser = localStorage.getItem("click_that_dog_user")
     const clickThatDogUserObject = JSON.parse(localClickThatDogUser) 
+
   
-    if (localClickThatDogUser.trainer) {
+    if (clickThatDogUserObject.trainer) {
       // Return employee views
       return <TrainerNav />
     }

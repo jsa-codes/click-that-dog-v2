@@ -8,11 +8,16 @@ export const ClientNav = () => {
 
     return (
         <ul className="navbar">
+            
+            <img src='http://www.erblicken.com/wp-content/uploads/2016/06/Funny_Jack2.jpg' alt=''/>
             <li className="navbar__item active">
-                <Link className="navbar__link" to="/clientProfile">Profile</Link>
+                <Link className="navbar__link" to="/training-log">Training</Link>
             </li>
             <li className="navbar__item active">
-                <Link className="navbar__link" to="/trainingLog">Training Log</Link>
+                <Link className="navbar__link" to="/training-log">Trainers</Link>
+            </li>
+            <li className="navbar__item active">
+                <Link className="navbar__link" to="/client-profile">Profile</Link>
             </li>
             
             {

@@ -8,10 +8,10 @@ export const TrainerNav = () => {
         <ul className="navbar">
             
             <li className="navbar__item active">
-                <Link className="navbar__link" to="/trainerProfile">Profile</Link>
+                <Link className="navbar__link" to="/trainer-profile">Profile</Link>
             </li>
             <li className="navbar__item active">
-                <Link className="navbar__link" to="/clientList">Clients</Link>
+                <Link className="navbar__link" to="/client-list">Clients</Link>
             </li>
             
             {
