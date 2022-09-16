@@ -15,7 +15,7 @@ return (
       }>
           
         
-          <Route path="training/form" element={ <TrainingSessionForm /> } />
+          <Route path="trainingSession" element={ <TrainingSessionForm /> } />
           
       </Route>
     </Routes>
