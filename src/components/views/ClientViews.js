@@ -11,9 +11,10 @@ export const ClientViews = () => {
     <Routes>
       <Route path="/" element={
         <>
-          <h1>Click That Dog</h1>
+          <h1>Click That Dog!</h1>
           <div>Discover The Joy In Training Your Dog</div>
-          <h3>This is Client Profile Form 🐕‍🦺</h3>
+          <h3>This is Client Dashboard 🐕‍🦺</h3>
+          <p>This is the view they see once they've logged in.</p>
 
           <Outlet />
         </>

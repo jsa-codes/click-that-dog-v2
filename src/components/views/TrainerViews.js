@@ -34,7 +34,7 @@ export const TrainerViews = () => {
 
       </Route>
 
-      <Route path="/client-container"  element={
+      <Route path="/client"  element={
         <>
           
 
@@ -46,7 +46,7 @@ export const TrainerViews = () => {
       
 
 
-      <Route path="/trainer-profile-form" element={
+      <Route path="/profileForm" element={
           <>
             <TrainerProfileForm />
           </>
