@@ -12,6 +12,7 @@ export const TrainerList = () => {
         <>
             <article className='trainers'>
                 <h2>Trainers</h2>
+                <p>This is where the list of Trainers will be.</p>
 
                 {
                     
