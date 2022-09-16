@@ -28,3 +28,16 @@ export const ClientViews = () => {
     </Routes>
   )
 }
+
+/* 
+^ NOTES :
+  - NAV BAR LINKS: (className="navbar__link")
+    - Training 
+      - /trainingSession
+    - Trainers
+      - /trainers
+    - Profile
+      - /profileForm
+    - Logout 
+      - onClick()
+*/
