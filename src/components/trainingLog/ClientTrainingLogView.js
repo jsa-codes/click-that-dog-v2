@@ -7,7 +7,8 @@ return (
     <Routes>
       <Route path="/" element={
         <>
-          <p>Training Log View</p>
+          <h2>Training Log</h2>
+          <p>Client can view a list of ALL training sessions. </p>
 
           <Outlet />
         </>

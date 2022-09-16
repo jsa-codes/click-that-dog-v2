@@ -4,7 +4,7 @@ import { TrainerList } from '../trainers/TrainerList';
 import { TrainingSessionForm } from '../trainingSession/TrainingSessionForm';
 
 
-
+// When the client hits submit they should be taken to their Training Log — displays ALL of their training sessions.
 
 export const ClientViews = () => {
   return (

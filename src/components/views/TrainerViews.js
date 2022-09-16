@@ -4,8 +4,6 @@ import { ClientDetails } from '../client/ClientDetails';
 import { ClientList } from '../client/ClientList';
 
 
-
-
 // ONLY FOR LOGGED IN TRAINERS
 export const TrainerViews = () => {
   return (
