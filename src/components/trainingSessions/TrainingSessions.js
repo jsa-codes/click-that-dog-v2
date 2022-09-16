@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import "./TrainingSessions.css"
 
 export const TrainingSessions = () => {
 

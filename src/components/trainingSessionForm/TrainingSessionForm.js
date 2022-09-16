@@ -1,12 +1,13 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import "./TrainingSessionForm.css"
 
 export const TrainingSessionForm = () => {
     
     
     return (
         <>
-    <form>
+    <form className="training-session__form">
     <fieldset>
       <legend>Today's Training Session</legend>
        

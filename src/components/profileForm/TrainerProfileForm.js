@@ -1,24 +1,30 @@
+import "./TrainerProfileForm.css"
 
-
-import { Outlet, Route, Routes } from 'react-router-dom';
-
-
-
-// Only for logged in
 export const TrainerProfileForm = () => {
-  return (
-    <Routes>
-      <Route path="/"  element={
-        <>
-          <h1>Click That Dog</h1>
-          <div>Discover The Joy In Training Your Dog</div>
-          <h3>This is the Trainer's View 👨‍🏫</h3>
-          <p>Profile Form will be here</p>
-
-          <Outlet />
-        </>
-      }></Route>
-
-    </Routes>
-  )
+    return (
+    <>
+    <form class="trainer-profile--form">
+    <fieldset>
+      <legend>PLEASE ENTER YOUR INFORMATION BELOW</legend>
+       
+ 
+    <p>
+        <label>Full Name: <input name="fullName" /></label>
+      </p>
+    
+    <p>
+        <label>Email:<input type="email" name="email" /></label>
+    </p>
+    <p>
+        <label>Phone Number:<input type="phoneNumber" name="phoneNumber" /></label>
+    </p>
+    <p>
+        <button type="submit">Submit</button>
+    </p>
+ 
+ 
+     </fieldset>
+  </form>
+    </>
+)
 }

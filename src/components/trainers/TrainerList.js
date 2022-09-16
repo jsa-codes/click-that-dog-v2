@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import "./TrainerList.css"
 
 
 export const TrainerList = () => {
