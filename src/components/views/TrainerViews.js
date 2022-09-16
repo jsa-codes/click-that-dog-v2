@@ -22,35 +22,15 @@ export const TrainerViews = () => {
         </>
       }>
 
-        <Route path="clients" element={ <ClientContainer />}/>
-        <Route path="clients" element={ <ClientList />}/>
-        <Route path="clients" element={ <ClientDetails />}/>
-
-
-
-
-
-
-
+        <Route path="client" element={ <ClientContainer />}/>
+        <Route path="client" element={ <ClientList />}/>
+        <Route path="client" element={ <ClientDetails />}/>
       </Route>
 
-      <Route path="/client"  element={
-        <>
-          
-
-          <Outlet />
-        </>
-      }>
-
-      </Route>
-      
-
-
-      <Route path="/profileForm" element={
-          <>
-            <TrainerProfileForm />
-          </>
-      }></Route>
+    
     </Routes>
   )
 }
+      
+
+
