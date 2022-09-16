@@ -1,7 +1,8 @@
 import { Outlet, Route, Routes } from 'react-router-dom';
 import { ClientProfileForm } from '../profileForm/ClientProfileForm';
 import { TrainerList } from '../trainers/TrainerList';
-import { TrainingSessionForm } from '../trainingSession/TrainingSessionForm';
+import { TrainingSessionForm } from '../trainingSessionForm/TrainingSessionForm';
+import { TrainingSessions } from '../trainingSessions/TrainingSessions';
 
 
 // When the client hits submit they should be taken to their Training Log — displays ALL of their training sessions.
@@ -20,7 +21,8 @@ export const ClientViews = () => {
         </>
       }>
 
-        <Route path="trainingSession" element={<TrainingSessionForm />}></Route>
+        <Route path="trainingSessionForm" element={<TrainingSessionForm />}></Route>
+        <Route path="trainingSessions" element={<TrainingSessions />}></Route>
         <Route path="trainers" element={<TrainerList />}></Route>
         <Route path='profileForm' element={ <ClientProfileForm />}/>
           

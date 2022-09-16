@@ -9,9 +9,12 @@ export const ClientNav = () => {
     return (
         <ul className="navbar">
             
-            <img src='http://www.erblicken.com/wp-content/uploads/2016/06/Funny_Jack2.jpg' alt=''/>
+            <img src='http://www.erblicken.com/wp-content/uploads/2016/06/Funny_Jack2.jpg' alt='dog smiling'/>
             <li className="navbar__item active">
-                <Link className="navbar__link" to="/trainingSession">Training</Link>
+                <Link className="navbar__link" to="/trainingSessionForm">New Session</Link>
+            </li>
+            <li className="navbar__item active">
+                <Link className="navbar__link" to="/trainingSessions">All Sessions</Link>
             </li>
             <li className="navbar__item active">
                 <Link className="navbar__link" to="/trainers">Trainers</Link>

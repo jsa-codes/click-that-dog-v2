@@ -1,4 +1,5 @@
-import { Outlet, Route, Routes } from 'react-router-dom'
+import { useEffect, useState } from 'react'
+
 
 export const TrainerList = () => {
 
@@ -7,21 +8,39 @@ export const TrainerList = () => {
     // useEffect to fetch trainers
     // map through the trainers
 
-    return (
+    const [trainers, setTrainers] = useState([])
 
-        <>
-            <article className='trainers'>
-                <h2>Trainers</h2>
-                <p>This is where the list of Trainers will be.</p>
-
-                {
-                    
-
-                }
-                
-            </article>
-        </>
+    useEffect(
+        () => {
+            fetch(`http://localhost:8088/trainers?_expand&_expand=user`)
+            .then(response => response.json())
+            .then((trainersArray) =>  {
+            setTrainers(trainersArray)
+            })
+        }, []
     )
+
+    return <>
+        <h2>Available Trainers</h2>
+
+        <article className='trainers'>
+
+            {
+                trainers.map(
+                    (trainer) => {
+                        return <section className="all__trainers">
+                            <h3>{trainer?.user?.fullName}</h3>
+                            <p><a href="_target">{trainer?.user?.email}</a></p>
+                        </section>
+                    }
+                )
+                
+
+            }
+            
+        </article>
+        </>
+   
        
 
         
