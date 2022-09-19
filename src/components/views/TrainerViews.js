@@ -15,7 +15,7 @@ export const TrainerViews = () => {
           <div>Discover The Joy In Training Your Dog</div>
           <h3>This is the Trainer's View 👨‍🏫</h3>
           <p>➡️ IF the Trainer is a Member, he/she should be able to see a list of their current clients here.</p>
-          <p>➡️ The trainer should also be able to click on a client and then be directed to that client's training log.</p>
+          <p>➡️ The trainer should also be able to click on a client's name and then be directed to that client's training log.</p>
 
           <Outlet />
         </>
