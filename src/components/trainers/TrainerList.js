@@ -29,7 +29,7 @@ export const TrainerList = () => {
             {
                 trainers.map(
                     (trainer) => {
-                        return <section className="all__trainers">
+                        return <section className="all-trainers">
                             <h3>{trainer?.user?.fullName}</h3>
                             <p><a href="_target">{trainer?.user?.email}</a></p>
                         </section>
@@ -40,10 +40,5 @@ export const TrainerList = () => {
             }
             
         </article>
-        </>
-   
-       
-
-        
-    
+        </>   
 }

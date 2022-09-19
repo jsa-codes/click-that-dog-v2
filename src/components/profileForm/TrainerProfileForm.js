@@ -1,9 +1,9 @@
-import "./TrainerProfileForm.css"
+
 
 export const TrainerProfileForm = () => {
     return (
     <>
-    <form class="trainer-profile--form">
+    <form>
     <fieldset>
       <legend>PLEASE ENTER YOUR INFORMATION BELOW</legend>
        

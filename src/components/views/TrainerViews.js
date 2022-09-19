@@ -21,8 +21,8 @@ export const TrainerViews = () => {
         </>
       }>
 
-        <Route path="client" element={<ClientList />}></Route>
         <Route path='profileForm' element={ <TrainerProfileForm />}/>
+        <Route path="clients" element={<ClientList />}></Route>
       </Route>
 
     

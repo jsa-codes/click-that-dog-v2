@@ -33,14 +33,7 @@ export const ClientProfileForm = () => {
         <label>Dog's Age:<input type="age" name="age" /></label>
       </p>
  
- 
-       
- 
-<p></p>
-    
- 
- 
-    <p>
+      <p>
         <button type="submit">Submit</button>
       </p>
  
