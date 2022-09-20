@@ -2,7 +2,7 @@ export const ClientProfile = () => {
     return  (
         <>
     <form>
-    <fieldset>
+    <fieldset className='client-profile--form'>
       <legend>Personal Details</legend>
        
  

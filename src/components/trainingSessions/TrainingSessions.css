@@ -1,3 +1,8 @@
 .trainingSessions {
     border: 2px solid purple;
 }
+
+.single-session {
+    border: 2px solid orange;
+    margin: 2px;
+}

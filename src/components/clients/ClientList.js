@@ -15,7 +15,7 @@ export const ClientList = () => {
 //      id, fullName, email, isTrainer : false
 useEffect(
     () => {
-        fetch(`http://localhost:8088/users?isTrainer=false`)
+        fetch(`http://localhost:8088/clients?_expand=user`)
         .then(response => response.json())
         .then((clientArray) =>  {
             setClients(clientArray)
@@ -34,9 +34,11 @@ useEffect(
             {
                 clients.map(
                     (client) => {
+                        
                         return <section className="client" key={`client--${client.id}`}>
-                            <h3><a href="#">{client.fullName}</a></h3>
-                            <p>{client.email}</p>
+                            <h3><a href="google.com" target="_blank">{client.user.fullName}</a></h3>
+                            <p><a href="mailto: abc@example.com">{client.user.email}</a></p>
+                            
                             
                         </section>
                     }

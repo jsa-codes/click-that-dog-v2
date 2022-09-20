@@ -1,4 +1,4 @@
-
+import "./ClientProfileForm.css"
 
 export const ClientProfileForm = () => {
     return (
