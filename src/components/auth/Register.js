@@ -60,6 +60,7 @@ export const Register = (props) => {
         <main style={{ textAlign: "center" }}>
             <form className="form--login" onSubmit={handleRegister}>
                 <h1 className="h3 mb-3 font-weight-normal">Please Register for Click That Dog</h1>
+                <img src='http://www.erblicken.com/wp-content/uploads/2016/06/Funny_Jack2.jpg' alt='dog smiling'/>
                 <fieldset>
                     <label htmlFor="fullName"> Full Name </label>
                     <input onChange={updateClient}

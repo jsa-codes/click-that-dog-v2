@@ -60,7 +60,7 @@ export const TrainingSessionForm = () => {
         setDogName(clientDogArray)
       })
 
-      fetch(`http://localhost:8088/trainingSession`, {
+      fetch(`http://localhost:8088/trainingSessions`, {
           method: "POST",
           headers: {
               "Content-Type": "application/json"

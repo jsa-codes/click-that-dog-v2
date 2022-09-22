@@ -3,6 +3,7 @@
 export const TrainerProfileForm = () => {
     return (
     <>
+    <h3>This page should only show the form for the trainer to create their profile.</h3>
     <form>
     <fieldset>
       <legend>PLEASE ENTER YOUR INFORMATION BELOW</legend>
@@ -15,9 +16,7 @@ export const TrainerProfileForm = () => {
     <p>
         <label>Email:<input type="email" name="email" /></label>
     </p>
-    <p>
-        <label>Phone Number:<input type="phoneNumber" name="phoneNumber" /></label>
-    </p>
+    
     <p>
         <button type="submit">Submit</button>
     </p>

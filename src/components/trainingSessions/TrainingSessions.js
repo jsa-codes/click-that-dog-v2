@@ -11,12 +11,12 @@ export const TrainingSessions = () => {
 
         useEffect(
             () => {
-                fetch(`http://localhost:8088/trainingSession?_expand=clientDog`)
+                fetch(`http://localhost:8088/trainingSessions?_expand=clientDog`)
                 .then(response => response.json())
                 .then((trainingSessionArray) =>  {
                     setTrainingSessions(trainingSessionArray)
                 })
-            }, []
+            }, [trainingSessions]
         )
 
         return <>
