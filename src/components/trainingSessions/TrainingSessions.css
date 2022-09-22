@@ -4,5 +4,6 @@
 
 .single-session {
     border: 2px solid orange;
-    margin: 2px;
+    margin: 4px;
+    background-color: rgb(232, 245, 250);
 }

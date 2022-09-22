@@ -1,0 +1,7 @@
+9-20-2022
+Q: How do I get the date that is selected to show up in the database when the form is submitted?
+
+Q: How do I structure the useState for the clientProfile?
+
+Q: Why are the other fields not showing up?
+Q: Why

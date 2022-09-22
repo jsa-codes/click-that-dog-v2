@@ -4,12 +4,13 @@ import "./TrainerList.css"
 
 export const TrainerList = () => {
 
+    const [trainers, setTrainers] = useState([])
+    
     // Fetch trainers
     // set state for trainers
     // useEffect to fetch trainers
     // map through the trainers
 
-    const [trainers, setTrainers] = useState([])
 
     useEffect(
         () => {

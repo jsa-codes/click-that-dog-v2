@@ -6,9 +6,9 @@ import "./TrainingSessionForm.css"
 
 export const TrainingSessionForm = () => {
     
-  const [session, update] = useState({
-      description: ""
-  })
+  // State starts as empty object
+  const [session, update] = useState({})
+  const [dogName, setDogName] = useState([])
 
   const navigate = useNavigate()
 
@@ -37,8 +37,10 @@ export const TrainingSessionForm = () => {
 
      const sessionToSendToAPI = {
         userId: clickThatDogUserObject.id,
-        todaysDate: "",
+        clientDogId: session.clientDogId,
+        todaysDate: session.todaysDate,
         behaviorTypeId: session.behaviorTypeId,
+        dogName: session.dogName,
         behaviorName: session.behaviorName,
         locationName: session.locationName,
         timeSpent: session.timeSpent,
@@ -52,7 +54,13 @@ export const TrainingSessionForm = () => {
       TO-DO : Perform the fetch() to POST the object to the API
     */
 
-      fetch(` http://localhost:8088/trainingSession`, {
+      fetch(`http://localhost:8088/clientDogs`)
+      .then(response => response.json())
+      .then((clientDogArray) =>  {
+        setDogName(clientDogArray)
+      })
+
+      fetch(`http://localhost:8088/trainingSession`, {
           method: "POST",
           headers: {
               "Content-Type": "application/json"
@@ -63,114 +71,132 @@ export const TrainingSessionForm = () => {
       .then(() =>  {
           navigate("/trainingSessions")
       })
+
+
   }
     
     return (
       <form className="sessionForm">
             <h2 className="sessionForm__title">New Session</h2>
             <fieldset>
-                <div className="form-group">
-                  <label htmlFor="todaysDate">Today's Date:</label>
-                    <input
-                        required autoFocus
-                        type="date"
-                        className="form-control"
-                        placeholder="Today's date"
-                        value={session.todaysDate}
-                        onChange={
-                          (evt) => {
-                            const copy = {...session}
-                            copy.todaysDate = evt.target.value
-                            update(copy)
-                          }
-                        } />
-                    <label htmlFor="behaviorName">Behavior Trained:</label>
-                    <input
-                        required autoFocus
-                        type="text"
-                        className="form-control"
-                        placeholder="Which behavior did you work on?"
-                        value={session.behaviorName}
-                        onChange={
-                          (evt) => {
-                            const copy = {...session}
-                            copy.behaviorName = evt.target.value
-                            update(copy)
-                          }
-                        } />
-                    <label htmlFor="location">Location:</label>
-                    <input
-                        required autoFocus
-                        type="text"
-                        className="form-control"
-                        placeholder="Where did you work on this behavior?"
-                        value={session.locationName}
-                        onChange={
-                          (evt) => {
-                            const copy = {...session}
-                            copy.locationName = evt.target.value
-                            update(copy)
-                          }
-                        } />
-                        <label htmlFor="timeSpent">Time Spent:</label>
-                    <input
-                        required autoFocus
-                        type="number"
-                        className="form-control"
-                        placeholder="How many minutes did you train? 
-                        Enter a number between 1 and 60"
-                        value={session.timeSpent}
-                        onChange={
-                          (evt) => {
-                            const copy = {...session}
-                            copy.timeSpent = evt.target.value
-                            update(copy)
-                          }
-                        } />
-                    <label htmlFor="treatsUsed">Treats Used:</label>
-                    <input
-                        required autoFocus
-                        type="text"
-                        className="form-control"
-                        placeholder="Which treats were used?"
-                        value={session.treatsUsed}
-                        onChange={
-                          (evt) => {
-                            const copy = {...session}
-                            copy.treatsUsed = evt.target.value
-                            update(copy)
-                          }
-                        } />
-                    <label htmlFor="rating">Rate this Training Session:</label>
-                    <input
-                        required autoFocus
-                        type="number"
-                        className="form-control"
-                        placeholder="Rate this training session on a scale of 1 to 10"
-                        value={session.rating}
-                        onChange={
-                          (evt) => {
-                            const copy = {...session}
-                            copy.rating = evt.target.value
-                            update(copy)
-                          }
-                        } />
-                        <label htmlFor="description">Description:</label>
-                    <input
-                        required autoFocus
-                        type="text"
-                        className="form-control"
-                        placeholder="Brief description of Training Session"
-                        value={session.description}
-                        onChange={
-                          (evt) => {
-                            const copy = {...session}
-                            copy.description = evt.target.value
-                            update(copy)
-                          }
-                        } />
-                    
-                </div>
+              <div className="form-group">
+                <label htmlFor="todaysDate">Today's Date:</label>
+                  <input
+                      required autoFocus
+                      type="date"
+                      className="form-control"
+                      placeholder="Today's date"
+                      value={session.todaysDate}
+                      onChange={
+                        (evt) => {
+                          const copy = {...session}
+                          copy.todaysDate = evt.target.value
+                          update(copy)
+                        }
+                      } />
+                  <label htmlFor="dogName">Dog's Name:</label>
+                  <select
+                      name="dogName" id='clientDogId'
+                      required autoFocus
+                      type="dropdown"
+                      className="form-control"
+                      placeholder="What's your dog's name?"
+                      value={session.dogName}
+                      onChange={
+                        (evt) => {
+                          const copy = {...session}
+                          copy.clientDog.dogName = evt.target.value
+                          update(copy)
+                        }
+                      } />
+                  
+                  
+                  <label htmlFor="behaviorName">Behavior Trained:</label>
+                  <input
+                      required autoFocus
+                      type="text"
+                      className="form-control"
+                      placeholder="Which behavior did you work on?"
+                      value={session.behaviorName}
+                      onChange={
+                        (evt) => {
+                          const copy = {...session}
+                          copy.behaviorName = evt.target.value
+                          update(copy)
+                        }
+                      } />
+                  <label htmlFor="location">Location:</label>
+                  <input
+                      required autoFocus
+                      type="text"
+                      className="form-control"
+                      placeholder="Where did you work on this behavior?"
+                      value={session.locationName}
+                      onChange={
+                        (evt) => {
+                          const copy = {...session}
+                          copy.locationName = evt.target.value
+                          update(copy)
+                        }
+                      } />
+                      <label htmlFor="timeSpent">Time Spent:</label>
+                  <input
+                      required autoFocus
+                      type="number"
+                      className="form-control"
+                      placeholder="How many minutes did you train?"
+                      value={session.timeSpent}
+                      onChange={
+                        (evt) => {
+                          const copy = {...session}
+                          copy.timeSpent = evt.target.value
+                          update(copy)
+                        }
+                      } />
+                  <label htmlFor="treatsUsed">Treats Used:</label>
+                  <input
+                      required autoFocus
+                      type="text"
+                      className="form-control"
+                      placeholder="Which treats were used?"
+                      value={session.treatsUsed}
+                      onChange={
+                        (evt) => {
+                          const copy = {...session}
+                          copy.treatsUsed = evt.target.value
+                          update(copy)
+                        }
+                      } />
+                  <label htmlFor="rating">Rate this Training Session:</label>
+                  <input
+                      required autoFocus
+                      type="number"
+                      className="form-control"
+                      placeholder="Rate this training session on a scale of 1 to 10"
+                      value={session.rating}
+                      onChange={
+                        (evt) => {
+                          const copy = {...session}
+                          copy.rating = evt.target.value
+                          update(copy)
+                        }
+                      } />
+                      <label htmlFor="description">Description:</label>
+                  <input
+                      required autoFocus
+                      type="text"
+                      className="form-control"
+                      placeholder="Brief description of Training Session"
+                      value={session.description}
+                      onChange={
+                        (evt) => {
+                          const copy = {...session}
+                          copy.description = evt.target.value
+                          update(copy)
+                        }
+                      } />
+                  
+              </div>
             </fieldset>
             
             <button 

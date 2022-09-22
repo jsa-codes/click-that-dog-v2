@@ -4,6 +4,10 @@ h1 {
     font-family: monospace
 }
 
+img {
+    margin-bottom: 1rem;
+}
+
 fieldset {
     
     min-width: 0;

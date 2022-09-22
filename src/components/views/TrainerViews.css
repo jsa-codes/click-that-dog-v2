@@ -1,0 +1,14 @@
+.click--tagline {
+    border: 2px solid blue;
+}
+
+.trainer-dashboard--welcomeMessage {
+    border: 2px solid green;
+}
+.trainer-dashboard--heading {
+    border: 2px solid orange;
+}
+
+.trainer-dashboard--message {
+    border: 2px solid purple;
+}

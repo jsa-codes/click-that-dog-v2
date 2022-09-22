@@ -20,7 +20,7 @@ export const ClientNav = () => {
                 <Link className="navbar__link" to="/trainers">Trainers</Link>
             </li>
             <li className="navbar__item active">
-                <Link className="navbar__link" to="/profileForm">Profile</Link>
+                <Link className="navbar__link" to="/profileForm">Profile Form</Link>
             </li>
             
             {

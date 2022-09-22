@@ -22,7 +22,7 @@ export const TrainerCreateProfile = () => {
 
       
 
-         <Route path="/trainer-profile-form" element={
+         <Route path="/" element={
         <TrainerProfileForm />
       }></Route>
     </Routes>

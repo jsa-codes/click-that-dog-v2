@@ -72,12 +72,7 @@ export const Register = (props) => {
                         type="email" id="email" className="form-control"
                         placeholder="Email address" required />
                 </fieldset>
-                <fieldset>
-                    <label htmlFor="phoneNumber"> Phone Number </label>
-                    <input onChange={updateClient}
-                           type="text" id="phoneNumber" className="form-control"
-                           placeholder="Enter your phone number" required autoFocus />
-                </fieldset>
+                
                 <fieldset>
                     <input onChange={(evt) => {
                         const copy = {...client}

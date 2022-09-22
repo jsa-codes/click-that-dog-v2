@@ -24,3 +24,5 @@ export const ClientDetails = () => {
         <div>Phone Number: {client?.user?.phoneNumber}</div>
     </section>
 }
+
+

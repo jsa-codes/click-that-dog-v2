@@ -36,6 +36,7 @@ export const Login = () => {
             <section>
                 <form className="form--login" onSubmit={handleLogin}>
                     <h1>Click That Dog</h1>
+                    <img src='http://www.erblicken.com/wp-content/uploads/2016/06/Funny_Jack2.jpg' alt='dog smiling'/>
                     <h2>Please sign in</h2>
                     <fieldset>
                         <label htmlFor="inputEmail"> Email address </label>
