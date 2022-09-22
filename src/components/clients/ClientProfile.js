@@ -1,4 +1,5 @@
 
+
 export const ClientProfile = () => {
 
     return  <>
@@ -7,6 +8,8 @@ export const ClientProfile = () => {
       <div>
         <p>This is where the Client's Profile will be displayed.</p>
       </div>
+
+      
       
 
 

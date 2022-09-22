@@ -16,7 +16,7 @@ export const TrainingSessions = () => {
                 .then((trainingSessionArray) =>  {
                     setTrainingSessions(trainingSessionArray)
                 })
-            }, [trainingSessions]
+            }, []
         )
 
         return <>
@@ -29,12 +29,13 @@ export const TrainingSessions = () => {
                     trainingSessions.map(
                         (trainingSession) => {
                             return <section className='single-session'>
-                                <p>Date: {trainingSession.todaysDate}</p>
-                                <h3>Behavior Trained: {trainingSession.behaviorName}</h3>
-                                <p>Location: {trainingSession.locationName}</p>
-                                <p>Time Spent: {trainingSession.timeSpent} minutes</p>
-                                <p>Treats: {trainingSession.treatsUsed}</p>
-                                <footer>Brief Description: {trainingSession.description}</footer>
+                                <h4>Date: {trainingSession.todaysDate}</h4>
+                                <h4>Dog's Name: {trainingSession.clientDog.dogName}</h4>
+                                <h4>Behavior Trained: {trainingSession.behaviorName}</h4>
+                                <h4>Location: {trainingSession.locationName}</h4>
+                                <h4>Time Spent: {trainingSession.timeSpent} minutes</h4>
+                                <h4>Treats: {trainingSession.treatsUsed}</h4>
+                                <h4>Brief Description: {trainingSession.description}</h4>
                             </section>
                         }
                     )

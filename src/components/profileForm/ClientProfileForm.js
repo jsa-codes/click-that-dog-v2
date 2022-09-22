@@ -77,21 +77,8 @@ export const ClientProfileForm = () => {
                       updateProfile(copy)
                     }
                   } />
-              <label htmlFor="email">Dog's Age:</label>
-              <input
-                  required autoFocus
-                  type="text"
-                  className="form-control"
-                  placeholder="How old is your dog?"
-                  value={clientProfile.dogAge}
-                  onChange={
-                    (evt) => {
-                      const copy = {...clientProfile}
-                      copy.dogAge = evt.target.value
-                      updateProfile(copy)
-                    }
-                  } />
-              <label htmlFor="email">Dog's Breed:</label>
+              
+              <label htmlFor="breed">Dog's Breed:</label>
               <input
                   required autoFocus
                   type="text"
@@ -102,20 +89,6 @@ export const ClientProfileForm = () => {
                     (evt) => {
                       const copy = {...clientProfile}
                       copy.breed = evt.target.value
-                      updateProfile(copy)
-                    }
-                  } />
-              <label htmlFor="email">Dog's Age:</label>
-              <input
-                  required autoFocus
-                  type="text"
-                  className="form-control"
-                  placeholder="How old is your dog?"
-                  value={clientProfile.dogAge}
-                  onChange={
-                    (evt) => {
-                      const copy = {...clientProfile}
-                      copy.dogAge = evt.target.value
                       updateProfile(copy)
                     }
                   } />
@@ -133,6 +106,21 @@ export const ClientProfileForm = () => {
                       updateProfile(copy)
                     }
                   } />
+              <label htmlFor="email">Dog's Age:</label>
+              <input
+                  required autoFocus
+                  type="text"
+                  className="form-control"
+                  placeholder="How old is your dog?"
+                  value={clientProfile.dogAge}
+                  onChange={
+                    (evt) => {
+                      const copy = {...clientProfile}
+                      copy.dogAge = evt.target.value
+                      updateProfile(copy)
+                    }
+                  } />
+              
               
               
               

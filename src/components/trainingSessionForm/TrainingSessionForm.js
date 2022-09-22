@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import "./TrainingSessionForm.css"
 
@@ -8,12 +8,31 @@ export const TrainingSessionForm = () => {
     
   // State starts as empty object
   const [session, update] = useState({})
-  const [dogName, setDogName] = useState([])
+  const [dogs, setDogs] = useState([])
+  const [client, setClient] = useState({})
+
 
   const navigate = useNavigate()
 
   const localClickThatDogUser = localStorage.getItem("click_that_dog_user")
   const clickThatDogUserObject = JSON.parse(localClickThatDogUser)
+
+   useEffect(
+    () => {
+      fetch(`http://localhost:8088/clientDogs`)
+        .then(response => response.json())
+        .then((clientDogArray) =>  {
+          setDogs(clientDogArray)
+        })
+      fetch(`http://localhost:8088/clients?userId=${clickThatDogUserObject.id}`)
+        .then(response => response.json())
+        .then((data) =>  {
+          setClient(data[0])
+      })
+      },[]
+      )
+
+    
 
   const handleSaveButtonClick = (event) => {
     event.preventDefault()
@@ -36,11 +55,10 @@ export const TrainingSessionForm = () => {
       */
 
      const sessionToSendToAPI = {
-        userId: clickThatDogUserObject.id,
+        
         clientDogId: session.clientDogId,
         todaysDate: session.todaysDate,
         behaviorTypeId: session.behaviorTypeId,
-        dogName: session.dogName,
         behaviorName: session.behaviorName,
         locationName: session.locationName,
         timeSpent: session.timeSpent,
@@ -54,11 +72,7 @@ export const TrainingSessionForm = () => {
       TO-DO : Perform the fetch() to POST the object to the API
     */
 
-      fetch(`http://localhost:8088/clientDogs`)
-      .then(response => response.json())
-      .then((clientDogArray) =>  {
-        setDogName(clientDogArray)
-      })
+     
 
       fetch(`http://localhost:8088/trainingSessions`, {
           method: "POST",
@@ -96,19 +110,23 @@ export const TrainingSessionForm = () => {
                       } />
                   <label htmlFor="dogName">Dog's Name:</label>
                   <select
-                      name="dogName" id='clientDogId'
-                      required autoFocus
-                      type="dropdown"
-                      className="form-control"
-                      placeholder="What's your dog's name?"
-                      value={session.dogName}
-                      onChange={
+                  onChange={
                         (evt) => {
                           const copy = {...session}
-                          copy.clientDog.dogName = evt.target.value
+                          copy.clientDogId = evt.target.value
                           update(copy)
                         }
-                      } />
+                      }>
+                    <option value={0}>Please Select a Dog</option>
+                    {
+                      dogs.map((dog) => {
+                          if (dog.clientId === client.id) {
+                            return <option value={dog.id}>{dog.dogName}</option>
+                          }
+                      })
+                    }
+                  </select>
+                     
                   
                   
                   <label htmlFor="behaviorName">Behavior Trained:</label>
