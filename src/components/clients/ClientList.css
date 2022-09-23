@@ -1,8 +1,23 @@
 .clients {
-    border: 2px solid purple;
+    /* border: 2px solid purple; */
+    
 }
 
 .client {
-    border: 2px solid skyblue;
+    /* border: 2px solid skyblue; */
     margin: 2px;
+    text-align: center;
+    
+}
+
+.currentClients-heading {
+    text-align: center;
+    text-decoration: underline 4px purple;
+    margin-top: 3rem;
+    
+}
+
+img {
+    border: solid 4px rgb(234, 198, 245);
+    box-shadow: -6px 1px 20px 5px darkgray;
 }

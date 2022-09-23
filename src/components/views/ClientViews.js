@@ -4,6 +4,7 @@ import { ClientProfileForm } from '../profileForm/ClientProfileForm';
 import { TrainerList } from '../trainers/TrainerList';
 import { TrainingSessionForm } from '../trainingSessionForm/TrainingSessionForm';
 import { TrainingSessions } from '../trainingSessions/TrainingSessions';
+import "./ClientViews.css"
 
 
 // When the client hits submit they should be taken to their Training Log — displays ALL of their training sessions.
@@ -15,10 +16,15 @@ export const ClientViews = () => {
     <Routes>
       <Route path="/" element={
         <>
-          <h1>Click That Dog!</h1>
-          <div>Discover The Joy In Training Your Dog</div>
-          <h3>This is the Client Dashboard 🐕‍🦺</h3>
-          <p>This is the view they see once they've logged in.</p>
+          <h1 className='client-views--heading'>Click That Dog!</h1>
+          <div className='client-views--tagLine'>Discover The Joy In Training Your Dog</div>
+          <div className='welcome-message'>
+            <h3>Welcome! We're so glad you're here today.</h3>
+            <p>Ready to do some training?</p>
+            <p>"Click" the <b>New Session</b> link above.</p>
+            
+          </div>
+          
 
           
 

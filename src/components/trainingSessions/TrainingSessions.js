@@ -1,52 +1,50 @@
-import { useEffect, useState } from 'react'
-import { useNavigate } from 'react-router-dom'
-import "./TrainingSessions.css"
+import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import './TrainingSessions.css';
 
 export const TrainingSessions = () => {
+    const [trainingSessions, setTrainingSessions] = useState([]);
+    const navigate = useNavigate();
 
+    useEffect(() => {
+        fetch(`http://localhost:8088/trainingSessions?_expand=clientDog`)
+            .then((response) => response.json())
+            .then((trainingSessionArray) => {
+                setTrainingSessions(trainingSessionArray);
+            });
+    }, []);
 
-        const [trainingSessions, setTrainingSessions] = useState([])
-        const navigate = useNavigate()
-        
-
-        useEffect(
-            () => {
-                fetch(`http://localhost:8088/trainingSessions?_expand=clientDog`)
-                .then(response => response.json())
-                .then((trainingSessionArray) =>  {
-                    setTrainingSessions(trainingSessionArray)
-                })
-            }, []
-        )
-
-        return <>
+    return (
+        <>
             <h2>List of Training Sessions</h2>
-            
-            <button onClick={() => navigate("/session/create")}>New Session</button>
-    
-            <article className="trainingSessions">
-                {
-                    trainingSessions.map(
-                        (trainingSession) => {
-                            return <section className='single-session'>
-                                <h4>Date: {trainingSession.todaysDate}</h4>
-                                <h4>Dog's Name: {trainingSession.clientDog.dogName}</h4>
-                                <h4>Behavior Trained: {trainingSession.behaviorName}</h4>
-                                <h4>Location: {trainingSession.locationName}</h4>
-                                <h4>Time Spent: {trainingSession.timeSpent} minutes</h4>
-                                <h4>Treats: {trainingSession.treatsUsed}</h4>
-                                <h4>Brief Description: {trainingSession.description}</h4>
-                            </section>
-                        }
-                    )
-                }
-    
-            </article >
-        
+
+            <div className='new-session-button--div'>
+                <button className='button-29' onClick={() => navigate('/session/create')}>
+                    New Session
+                </button>
+            </div>
+
+            <article className='trainingSessions'>
+                {trainingSessions.map((trainingSession) => {
+                    return (
+                        <section className='single-session'>
+                            <h4 className='trainingSession--info'>Date: </h4>
+                            {trainingSession.todaysDate}
+                            <h4 className='trainingSession--info'>Dog's Name:</h4> {trainingSession.clientDog.dogName}
+                            <h4 className='trainingSession--info'>Behavior Trained: </h4>
+                            {trainingSession.behaviorName}
+                            <h4 className='trainingSession--info'>Location: </h4>
+                            {trainingSession.locationName}
+                            <h4 className='trainingSession--info'>Time Spent: </h4>
+                            {trainingSession.timeSpent} minutes
+                            <h4 className='trainingSession--info'>Treats: </h4>
+                            {trainingSession.treatsUsed}
+                            <h4 className='trainingSession--info'>Brief Description: </h4>
+                            {trainingSession.description}
+                        </section>
+                    );
+                })}
+            </article>
         </>
-    }
-
-
-
-
-   
+    );
+};

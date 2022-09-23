@@ -1,3 +1,37 @@
 .training-session__form {
     border: 2px solid purple;
 }
+
+.sessionForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    width: auto;
+    margin-top: 4rem;
+
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 23rem;
+}
+
+.form-control {
+    margin: 1rem 0;
+}
+
+.dogName-select {
+    margin: 1rem 0;
+    padding: 1rem;
+}
+
+.submit-session--div {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+}

@@ -1,5 +1,6 @@
 
 import { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 import "./ClientList.css"
 
 
@@ -10,8 +11,8 @@ export const ClientList = () => {
     const clickThatDogUserObject = JSON.parse(localClickThatDogUser)
 
     const [clients, setClients] = useState([])
-    const [userObject, setUser] = useState([])
-    const [trainerObject, setTrainer] = useState([])
+    const [userObject, setUser] = useState({})
+    const [trainerObject, setTrainer] = useState({})
 
     
     // Fetches users that are not trainers
@@ -20,34 +21,49 @@ export const ClientList = () => {
 
     useEffect(
         () => {
-            fetch(`http://localhost:8088/users?_id=${clickThatDogUserObject.id}`)
+            fetch(`http://localhost:8088/users/${clickThatDogUserObject.id}`)
                 .then(response => response.json())
                 .then((objectFromJson) =>  {
-                    setUser(objectFromJson[0])
+                    setUser(objectFromJson)
                     })
-                .then(() => {
-                    fetch(`http://localhost:8088/trainers?_id=${userObject.trainerId}`)
+               
+        }, []
+    )
+
+    useEffect(
+        () => {
+             fetch(`http://localhost:8088/trainers?userId=${userObject.id}`)
                     .then(response => response.json())
                     .then((trainerObjectFromJson) =>  {
                         setTrainer(trainerObjectFromJson[0])
                     })
-                    .then(() => {
-                        fetch(`http://localhost:8088/clients?trainerId=${trainerObject.id}&_expand=user`)
-                            .then(response => response.json())
-                    // Client Array with Trainer Id of the user that is logged in.
-                            .then((clientArray) =>  {
-                            setClients(clientArray)
+        }, [userObject]
+    )
+
+    useEffect(
+        () => {
+            if (trainerObject) {
+                
+                fetch(`http://localhost:8088/clients?trainerId=${trainerObject.id}&_expand=user`)
+                    .then(response => response.json())
+            // Client Array with Trainer Id of the user that is logged in.
+                    .then((clientArray) =>  {
+                        setClients(clientArray)
                     })
-            })
-            }) 
-        }, 
+            }
+        
+        }, [trainerObject]
     )
 
     
-
+/* 
+        TO-DO LIST : 
+            - Client's name needs to be a link ✅
+            - When the trainer clinks on the client's name it should take the trainer to the client's profile page "/clientProfile"
+            
+*/
     return <>
-    <h2>Current Clients</h2>
-
+    <h2 className='currentClients-heading'>Current Clients</h2>
 
         <article className='clients'>
 
@@ -56,7 +72,7 @@ export const ClientList = () => {
                     (client) => {
                         
                         return <section className="client" key={`user--${client?.id}`}>
-                            <h3><a href="google.com" target="_blank">{client?.user?.fullName}</a></h3>
+                            <Link to="/clientProfile"><h3>{client?.user?.fullName}</h3></Link>
                             <p><a href="mailto: abc@example.com">{client?.user?.email}</a></p>
                             
                             

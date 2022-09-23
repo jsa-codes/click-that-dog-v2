@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import "./ClientProfileForm.css"
 
@@ -8,17 +8,28 @@ import "./ClientProfileForm.css"
 export const ClientProfileForm = () => {
 
     const [clientProfile, updateProfile] = useState({})
+    const [currentClient, setCurrentClient] = useState({})
 
     const navigate = useNavigate()
 
     const localClickThatDogUser = localStorage.getItem("click_that_dog_user")
     const clickThatDogUserObject = JSON.parse(localClickThatDogUser)
 
+    useEffect(
+      () => {
+        fetch(`http://localhost:8088/clients?userId=${clickThatDogUserObject.id}`)
+        .then(response => response.json())
+        .then((data) =>  {
+          setCurrentClient(data[0])
+      })
+      }, []
+    )
+
     const handleSaveButtonClick = (event) => {
       event.preventDefault()
 
        const clientProfileToSendToAPI = {
-        userId:clickThatDogUserObject.id,
+        clientId:currentClient.id,
         fullName:clientProfile.fullName,
         email: clientProfile.email,
         dogName: clientProfile.dogName,
@@ -27,7 +38,7 @@ export const ClientProfileForm = () => {
         gender: clientProfile.gender
        }
 
-       fetch(`http://localhost:8088/clients`, {
+       fetch(`http://localhost:8088/clientDogs`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json"
@@ -41,25 +52,10 @@ export const ClientProfileForm = () => {
       })
     }
 
-    /* 
-        TO-DO : 
-        "fullName": "",
-        "email": "",
-        "isTrainer": false
-    */
-
-       
-
-      /* 
-            TO-DO: Perform fetch() to POST the object to the API
-        */
-      
-     
-
     return (
-        <form className="clientProfileForm">
+        <form className="client-profile--Form">
             <h2 className="clientProfileForm__title">My Profile</h2>
-            <fieldset>
+            <fieldset className='overallForm'>
               <div className="form-group">
                   
               
@@ -127,11 +123,13 @@ export const ClientProfileForm = () => {
               </div>
             </fieldset>
             
-            <button 
-              onClick={(clickEvent) => handleSaveButtonClick(clickEvent)}
-              className="btn btn-primary">
-                Create Profile
-            </button>
+            <div className='create-profile--div'>
+              <button
+                onClick={(clickEvent) => handleSaveButtonClick(clickEvent)}
+                className="button-29 btn btn-primary">
+                  Create Profile
+              </button>
+            </div>
         </form>
       
       )

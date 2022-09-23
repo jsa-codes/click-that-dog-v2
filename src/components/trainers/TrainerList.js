@@ -14,7 +14,7 @@ export const TrainerList = () => {
 
     useEffect(
         () => {
-            fetch(`http://localhost:8088/trainers?_expand&_expand=user`)
+            fetch(`http://localhost:8088/users?&isTrainer=true`)
             .then(response => response.json())
             .then((trainersArray) =>  {
             setTrainers(trainersArray)
@@ -23,7 +23,7 @@ export const TrainerList = () => {
     )
 
     return <>
-        <h2>Available Trainers</h2>
+        <h3>Available Trainers</h3>
 
         <article className='trainers'>
 
@@ -31,8 +31,8 @@ export const TrainerList = () => {
                 trainers.map(
                     (trainer) => {
                         return <section className="all-trainers">
-                            <h3>{trainer?.user?.fullName}</h3>
-                            <p><a href="_target">{trainer?.user?.email}</a></p>
+                            <h3>{trainer.fullName}</h3>
+                            <p><a href="_target">{trainer.email}</a></p>
                         </section>
                     }
                 )

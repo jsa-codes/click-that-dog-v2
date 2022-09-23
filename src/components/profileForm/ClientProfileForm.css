@@ -1,3 +1,35 @@
 .client-profile--form {
     border: 2px solid purple;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    width: auto;
 }
+
+.overallForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 23rem;
+}
+
+.form-control {
+    margin: 1rem 0;
+}
+
+.create-profile--div {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+}
+

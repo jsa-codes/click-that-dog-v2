@@ -1,5 +1,5 @@
 import { Outlet, Routes, Route } from 'react-router-dom'
-import { TrainingSessionForm } from '../trainingSession/TrainingSessionForm'
+import { TrainingSessionForm } from '../trainingSessions/TrainingSessionForm'
 
 export const ClientTrainingLogView = () => {
     
@@ -15,7 +15,7 @@ return (
       }>
           
         
-          <Route path="trainingSession" element={ <TrainingSessionForm /> } />
+          <Route path="trainingSessions" element={ <TrainingSessionForm /> } />
           
       </Route>
     </Routes>

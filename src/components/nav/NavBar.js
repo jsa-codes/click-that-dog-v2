@@ -3,7 +3,10 @@ import { TrainerNav } from './TrainerNav'
 import "./NavBar.css"
 
 
-
+// STEP 1) Getting user from localStorage
+// STEP 2) Checking to see IF the user is a Trainer or Client
+// STEP 3) IF the user is a Trainer then show TrainerNav
+//            ELSE Show th
 export const NavBar = () => {
    
     const localClickThatDogUser = localStorage.getItem("click_that_dog_user")

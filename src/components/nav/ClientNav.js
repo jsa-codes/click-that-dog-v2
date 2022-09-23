@@ -1,5 +1,8 @@
 import { Link, useNavigate } from "react-router-dom"
 import "./NavBar.css"
+import "./ClientNav.css"
+
+// THIS IS JUST THE NAVIGATION VIEW FOR THE CLIENTS
 
 export const ClientNav = () => {
     const navigate = useNavigate()
@@ -21,6 +24,9 @@ export const ClientNav = () => {
             </li>
             <li className="navbar__item active">
                 <Link className="navbar__link" to="/profileForm">Profile Form</Link>
+            </li>
+            <li className="navbar__item active">
+                <Link className="navbar__link" to="/clients">My Profile</Link>
             </li>
             
             {
