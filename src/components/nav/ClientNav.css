@@ -19,7 +19,16 @@ li a {
     text-decoration: none;
 }
 
-
 li a:hover {
-    text-shadow: -8px 3px 20px 5px darkgrey
-}
+    text-shadow: 2px 2px 8px darkgrey;
+} 
+
+li a:active {
+    text-shadow: 2px 2px 8px darkgrey;
+    color: tomato;
+} 
+
+/* .navbar {
+    position: sticky;
+    top: 0;  
+} */

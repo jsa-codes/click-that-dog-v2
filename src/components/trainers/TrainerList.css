@@ -1,7 +1,22 @@
 .all-trainers {
-    border: 2px solid purple;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid purple;
+    border-radius: 4px;
     text-align: center;
     background-color: #f4f8fc;
     box-shadow: 2px 4px solid gray;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    box-shadow: 0 1px 10px gray;
+    
+}
+
+.available-trainers--heading {
+    text-align: center;
+    margin-top: 4rem;
+    
 }
 

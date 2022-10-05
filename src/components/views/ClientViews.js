@@ -3,6 +3,7 @@ import { ClientProfile } from '../clients/ClientProfile';
 import { ClientProfileForm } from '../profileForm/ClientProfileForm';
 import { TrainerList } from '../trainers/TrainerList';
 import { TrainingSessionForm } from '../trainingSessionForm/TrainingSessionForm';
+import { TrainingSessionEdit } from '../trainingSessions/TrainingSessionEdit';
 import { TrainingSessions } from '../trainingSessions/TrainingSessions';
 import "./ClientViews.css"
 
@@ -22,12 +23,8 @@ export const ClientViews = () => {
             <h3>Welcome! We're so glad you're here today.</h3>
             <p>Ready to do some training?</p>
             <p>"Click" the <b>New Session</b> link above.</p>
-            
-          </div>
+          </div> 
           
-
-          
-
           <Outlet />
         </>
       }>
@@ -37,24 +34,13 @@ export const ClientViews = () => {
         <Route path="trainers" element={<TrainerList />}></Route>
         <Route path='profileForm' element={ <ClientProfileForm />}/>
         <Route path='clientProfile' element={ <ClientProfile />}/>
-          
         <Route path="session/create" element={ <TrainingSessionForm />}/>
+        <Route path="trainingSessions/:sessionId/edit" element={ <TrainingSessionEdit />}/>
         
       </Route>
     </Routes>
   )
 }
 
-/* 
-^ NOTES :
-  - NAV BAR LINKS: (className="navbar__link")
-    - Training 
-      - /trainingSession
-    - Trainers
-      - /trainers
-    - Profile
-      - /profileForm
-    - Logout 
-      - onClick()
-*/
+
         

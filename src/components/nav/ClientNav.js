@@ -26,7 +26,7 @@ export const ClientNav = () => {
                 <Link className="navbar__link" to="/profileForm">Profile Form</Link>
             </li>
             <li className="navbar__item active">
-                <Link className="navbar__link" to="/clients">My Profile</Link>
+                <Link className="navbar__link" to="/clientProfile">My Profile</Link>
             </li>
             
             {

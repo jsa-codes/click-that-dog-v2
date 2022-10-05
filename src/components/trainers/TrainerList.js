@@ -4,6 +4,7 @@ import "./TrainerList.css"
 
 export const TrainerList = () => {
 
+    
     const [trainers, setTrainers] = useState([])
     
     // Fetch trainers
@@ -23,17 +24,22 @@ export const TrainerList = () => {
     )
 
     return <>
-        <h3>Available Trainers</h3>
+        <h2 className='available-trainers--heading'>Available Trainers</h2>
 
         <article className='trainers'>
 
             {
                 trainers.map(
                     (trainer) => {
-                        return <section className="all-trainers">
-                            <h3>{trainer.fullName}</h3>
-                            <p><a href="_target">{trainer.email}</a></p>
-                        </section>
+                        return (
+                            <section className='all-trainers'>
+                                <img src='https://img.izismile.com/img/img2/20091118/funny_crazy_faces_13.jpg' />
+                                <h3>{trainer.fullName}</h3>
+                                <p>
+                                    <a href='_target'>{trainer.email}</a>
+                                </p>
+                            </section>
+                        );
                     }
                 )
                 

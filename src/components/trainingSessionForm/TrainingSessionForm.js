@@ -3,7 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import './TrainingSessionForm.css';
 
 export const TrainingSessionForm = () => {
-    // State starts as empty object
+    
+    // SETTING INITIAL STATE
     const [session, update] = useState({});
     const [dogs, setDogs] = useState([]);
     const [client, setClient] = useState({});

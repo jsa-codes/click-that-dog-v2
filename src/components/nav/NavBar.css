@@ -4,8 +4,10 @@
     flex-wrap: nowrap;
     justify-content:space-around;
     align-items: flex-start;
-    margin-top: 2rem;
+    /* margin-top: 2rem; */
     padding: 5px;
+    padding-top: 2rem;
+    
     
 }
 
